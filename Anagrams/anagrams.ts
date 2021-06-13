@@ -1,11 +1,11 @@
 const R = require("ramda");
 
 let data = [
-  "red rum",
-  "murder",
   "rope",
   "pore",
   "repo",
+  "red rum",
+  "murder",
   "listen",
   "silent",
   "endeavour",
