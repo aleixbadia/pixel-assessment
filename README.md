@@ -5,6 +5,7 @@ An anagram is a word or phrase formed by rearranging the letters of a different 
 In order to provide the result in the desired format, we need to double loop through two arrays:
 - the unique anagrams list
 - the whole list of words
+
 It was in this double loop found that by using the wordOrganizer function in the comparison at line 42 I was not being very efficient, so I created an array of objects containing both the original word and the organized word so this function was only called once per word.
 
 During this exercise I used Ramda for two reasons:
