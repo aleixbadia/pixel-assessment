@@ -1,1 +1,4 @@
-# pixel-assessment
+# Pixel-assessment
+## Anagrams
+
+## Rijks gallery

@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "ramda": "^0.27.1"
+    "ramda": "^0.27.1",
+    "ts-node": "^10.0.0"
   }
 }
