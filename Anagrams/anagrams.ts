@@ -1,16 +1,20 @@
 const R = require("ramda");
-
 let data = [
+  "red rum",
+  "murder",
   "rope",
   "pore",
   "repo",
-  "red rum",
-  "murder",
   "listen",
   "silent",
   "endeavour",
 ];
-
+​
+interface wordObjInt {
+  origWord: string;
+  organizedWord: string;
+}
+​
 function checkAnagrams(data: string[]) {
   const wordOrganizer: (word: string) => string = R.pipe(
     R.replace(/\W+/g, ""),
@@ -19,31 +23,21 @@ function checkAnagrams(data: string[]) {
     R.sortBy(R.identity),
     R.join("")
   );
-
   const findUniqAnagrams: (wordsArr: string[]) => string[] = R.pipe(
-    R.map(wordOrganizer),
-    R.uniq
-  );
-
-  interface wordObjInt {
-    origWord: string;
-    organizedWord: string;
-  }
-
-  let wordObjs = data.map((word: string): wordObjInt => {
+      R.map(wordOrganizer),
+      R.uniq
+  )
+  
+  let wordObjs = data.map((word): wordObjInt => {
     return { origWord: word, organizedWord: wordOrganizer(word) };
   });
-
-  const uniqAnagrams: string[] = findUniqAnagrams(data);
-
-  return uniqAnagrams.map((anagram: string): string[] => {
+  const uniqAnagrams = findUniqAnagrams(data)
+  return uniqAnagrams.map((anagram) => {
     let groupOfWords: string[] = [];
     wordObjs.forEach((wordObj: wordObjInt) => {
-      if (anagram === wordObj.organizedWord)
-        groupOfWords.push(wordObj.origWord);
+      if (anagram === wordObj.organizedWord) groupOfWords.push(wordObj.origWord);
     });
-    return groupOfWords;
+    return groupOfWords
   });
 }
-
 console.log(checkAnagrams(data));

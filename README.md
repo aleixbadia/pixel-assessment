@@ -6,7 +6,7 @@ In order to provide the result in the desired format, we need to double loop thr
 - the unique anagrams list
 - the whole list of words
 
-It was in this double loop found that by using the wordOrganizer function in the comparison at line 42 I was not being very efficient, so I created an array of objects containing both the original word and the organized word so this function was only called once per word.
+I created an array of objects containing both the original word and the organized word to make sure that the function wordOrganizer was only called once per word, instead of calling it everytime we needed to compare a word with a unique anagram.
 
 During this exercise I used Ramda for two reasons:
 - It's easier to read when using functional programming to create functions such as wordOrganizer and findUniqAnagrams.
