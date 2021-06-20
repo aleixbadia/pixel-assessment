@@ -11,6 +11,3 @@ I created an array of objects containing both the original word and the organize
 During this exercise I used Ramda for two reasons:
 - It's easier to read when using functional programming to create functions such as wordOrganizer and findUniqAnagrams.
 - It provides certain methods such as R.uniq that don't exist in vanilla JS that come in handy in situations like this.
-
-
-## Rijks gallery
